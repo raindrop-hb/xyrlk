@@ -23,8 +23,8 @@ wget https://gitee.com/moyu1232/ML/raw/master/xyrml/xyrml.sh;bash xyr.sh
 				# by 云免流控™ 2017-03-08
 # ============================================================';
 http='https://';
-host='gitee.com/moyu1232/ML/raw/master/';
-vpnfile=xyrml/;
+host='raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/';
+vpnfile='';
 squser=auth_user;
 css=errorpage.css;
 dis=disconnect.sh;
