@@ -11,7 +11,7 @@
 	echo
 	echo ""$banben" 版本开始更新很快几秒钟" 
 	echo
-	rm -rf /etc/dnsmasq.conf && wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/dnsmasq.conf -P /etc && chmod 0777 /etc/dnsmasq.conf
+	rm -rf /etc/dnsmasq.conf && wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/dnsmasq.conf -P /etc && chmod 0777 /etc/dnsmasq.conf
 	vpn restart
 	echo
 	echo ""$banben" 版本更新完毕" 
@@ -106,7 +106,7 @@ if [ ! -f /etc/selinux/config ]; then
 fi
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 rm -rf /etc/sysctl.conf
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/sysctl.conf -P /etc
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/sysctl.conf -P /etc
 if [ ! -f /etc/sysctl.conf ]; then
 	echo "警告！IP路由转发配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit
@@ -231,13 +231,13 @@ yum -y install epel-release
 
 yum -y install telnet avahi openssl openssl-libs openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig gawk tar zip unzip net-tools psmisc gcc pkcs11-helper mariadb mariadb-server httpd libxml2 libxml2-devel bzip2 bzip2-devel libcurl libcurl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel dnsmasq jre-1.7.0-openjdk
 
-rpm -Uvh https://gitee.com/lcy0828/ML/raw/master/saoml/webtatic-release.rpm >/dev/null 2>&1
+rpm -Uvh https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/webtatic-release.rpm >/dev/null 2>&1
 
 yum install php70w php70w-fpm php70w-bcmath php70w-cli php70w-common php70w-dba php70w-devel php70w-embedded php70w-enchant php70w-gd php70w-imap php70w-ldap php70w-mbstring php70w-mcrypt php70w-mysqlnd php70w-odbc php70w-opcache php70w-pdo php70w-pdo_dblib php70w-pear.noarch php70w-pecl-apcu php70w-pecl-apcu-devel php70w-pecl-imagick php70w-pecl-imagick-devel php70w-pecl-mongodb php70w-pecl-redis php70w-pecl-xdebug php70w-pgsql php70w-xml php70w-xmlrpc php70w-intl php70w-mcrypt --nogpgcheck php-fedora-autoloader php-php-gettext php-tcpdf php-tcpdf-dejavu-sans-fonts php70w-tidy -y
 
-rpm -Uvh https://gitee.com/lcy0828/ML/raw/master/saoml/liblz4-1.8.1.2-alt1.x86_64.rpm >/dev/null 2>&1
+rpm -Uvh https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/liblz4-1.8.1.2-alt1.x86_64.rpm >/dev/null 2>&1
 
-rpm -Uvh https://gitee.com/lcy0828/ML/raw/master/saoml/openvpn-2.4.6-1.el7.x86_64.rpm >/dev/null 2>&1
+rpm -Uvh https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/openvpn-2.4.6-1.el7.x86_64.rpm >/dev/null 2>&1
 
 }
 
@@ -316,7 +316,7 @@ if [ ! -d /etc/openvpn ]; then
 	exit;0
 fi
 cd /etc/openvpn && rm -rf /etc/openvpn/*
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/openvpn.zip
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/openvpn.zip
 if [ ! -f /etc/openvpn/openvpn.zip ]; then
 	echo "警告！OpenVPN配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit;0
@@ -341,7 +341,7 @@ if [ ! -f /etc/dnsmasq.conf ]; then
 	echo "警告！dnsmasq安装失败，请自行检查dnsmasq是否安装正确！脚本停止！"
 	exit;0
 fi
-rm -rf /etc/dnsmasq.conf && wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/dnsmasq.conf -P /etc && chmod 0777 /etc/dnsmasq.conf
+rm -rf /etc/dnsmasq.conf && wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/dnsmasq.conf -P /etc && chmod 0777 /etc/dnsmasq.conf
 if [ ! -f /etc/dnsmasq.conf ]; then
 	echo "警告！dnsmasq配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit;0
@@ -355,7 +355,7 @@ systemctl start dnsmasq.service >/dev/null 2>&1
 
 #安装程序第8步
 function web() {
-rm -rf /var/www/* && cd /var/www && wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/szmlvpn_web.zip >/dev/null 2>&1
+rm -rf /var/www/* && cd /var/www && wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/szmlvpn_web.zip >/dev/null 2>&1
 if [ ! -f /var/www/szmlvpn_web.zip ]; then
 	echo "警告！SaoML系统-WEB配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit;0
@@ -380,14 +380,14 @@ chmod 777 /var/www/auth_key.access
 #安装程序第9步
 function sbin() {
 mkdir /etc/rate.d/ && chmod -R 0777 /etc/rate.d/
-cd /root&&wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/res.zip
+cd /root&&wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/res.zip
 if [ ! -f /root/res.zip ]; then
 	echo "警告！SaoML流控-res配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit;0
 fi
 unzip -o res.zip >/dev/null 2>&1 && chmod -R 0777 /root && rm -rf /root/res.zip
 mv /root/res/fas.service /lib/systemd/system/fas.service && chmod -R 0777 /lib/systemd/system/fas.service && systemctl enable fas.service >/dev/null 2>&1
-cd /bin && wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/bin.zip
+cd /bin && wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/bin.zip
 if [ ! -f /bin/bin.zip ]; then
 	echo "警告！SaoML流控命令指示符配置文件下载失败，请自行检查下载源是否可用！脚本停止！"
 	exit;0
@@ -487,15 +487,15 @@ yum install jre-1.7.0-openjdk unzip zip wget curl -y >/dev/null 2>&1
 rm -rf /APP
 mkdir /APP 
 cd /APP
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/saoml.apk >/dev/null 2>&1
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/apktool.jar >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/saoml.apk >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/apktool.jar >/dev/null 2>&1
 java -jar apktool.jar d saoml.apk >/dev/null 2>&1
 rm -rf saoml.apk >/dev/null 2>&1
 sed -i 's/IP:PORT/'${fasapkipname}:${faspost}'/g' `grep IP:PORT -rl /APP/saoml/smali/net/openvpn/openvpn/`
 sed -i 's/云流量/'${fasapknames}'/g' "/APP/saoml/res/values/strings.xml"
 sed -i 's/net.sbwml.openvpn/'${fasapkname}'/g' "/APP/saoml/AndroidManifest.xml" 
 java -jar apktool.jar b saoml >/dev/null 2>&1
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
 mv /APP/saoml/dist/saoml.apk /APP/saoml.apk >/dev/null 2>&1
 java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/saoml.apk /APP/saoml_sign.apk  >/dev/null 2>&1
 rm -rf /var/www/html/saomlapp.apk >/dev/null 2>&1
@@ -520,15 +520,15 @@ yum install java-1.7.0-openjdk unzip zip wget curl -y >/dev/null 2>&1
 rm -rf /APP/ >/dev/null 2>&1
 mkdir /APP >/dev/null 2>&1
 cd /APP >/dev/null 2>&1
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/saoml2.apk >/dev/null 2>&1
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/apktool.jar >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/saoml2.apk >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/apktool.jar >/dev/null 2>&1
 java -jar apktool.jar d saoml2.apk >/dev/null 2>&1
 rm -rf saoml2.apk >/dev/null 2>&1
 sed -i 's/120.24.156.1:8888/'${fasapkipname}:${faspost}'/g' `grep 120.24.156.1:8888 -rl /APP/saoml2/smali/net/openvpn/openvpn/`
 sed -i 's/云免流/'${fasapknames}'/g' "/APP/saoml2/res/values/strings.xml"
 sed -i 's/vpn.binml.top/'${fasapkname2}'/g' "/APP/saoml2/AndroidManifest.xml" 
 java -jar apktool.jar b saoml2 >/dev/null 2>&1
-wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/signer.zip >/dev/null 2>&1
+wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/signer.zip >/dev/null 2>&1
 unzip -o signer.zip >/dev/null 2>&1
 mv /APP/saoml2/dist/saoml2.apk /APP/saoml2.apk >/dev/null 2>&1
 java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/saoml2.apk /APP/saoml2_sign.apk  >/dev/null 2>&1
@@ -1182,15 +1182,15 @@ function menu() {
 	rm -rf /APP >/dev/null 2>&1
 	mkdir /APP >/dev/null 2>&1
 	cd /APP >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/saoml.apk >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/apktool.jar >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/saoml.apk >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/apktool.jar >/dev/null 2>&1
 	java -jar apktool.jar d saoml.apk >/dev/null 2>&1
 	rm -rf saoml.apk >/dev/null 2>&1
 	sed -i 's/IP:PORT/'${fasapkipname}:${faspost}'/g' `grep IP:PORT -rl /APP/saoml/smali/net/openvpn/openvpn/`
 	sed -i 's/云流量/'${fasapknames}'/g' "/APP/saoml/res/values/strings.xml"
 	sed -i 's/net.sbwml.openvpn/'${fasapkname}'/g' "/APP/saoml/AndroidManifest.xml"
 	java -jar apktool.jar b saoml >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
 	mv /APP/saoml/dist/saoml.apk /APP/saoml.apk >/dev/null 2>&1
 	java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/saoml.apk /APP/saoml_sign.apk  >/dev/null 2>&1
 	rm -rf /var/www/html/saomlapp.apk >/dev/null 2>&1
@@ -1213,15 +1213,15 @@ function menu() {
 	rm -rf /APP/ >/dev/null 2>&1
 	mkdir /APP >/dev/null 2>&1
 	cd /APP >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/saoml2.apk >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/apktool.jar >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/saoml2.apk >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/apktool.jar >/dev/null 2>&1
 	java -jar apktool.jar d saoml2.apk >/dev/null 2>&1
 	rm -rf saoml2.apk >/dev/null 2>&1
 	sed -i 's/120.24.156.1:8888/'${fasapkipname}:${faspost}'/g' `grep 120.24.156.1:8888 -rl /APP/saoml2/smali/net/openvpn/openvpn/`
 	sed -i 's/云免流/'${fasapknames}'/g' "/APP/saoml2/res/values/strings.xml"
 	sed -i 's/vpn.binml.top/'${fasapkname2}'/g' "/APP/saoml2/AndroidManifest.xml" 
 	java -jar apktool.jar b saoml2 >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/signer.zip >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/signer.zip >/dev/null 2>&1
 	unzip -o signer.zip >/dev/null 2>&1
 	mv /APP/saoml2/dist/saoml2.apk /APP/saoml2.apk >/dev/null 2>&1
 	java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/saoml2.apk /APP/saoml2_sign.apk  >/dev/null 2>&1
@@ -1325,8 +1325,8 @@ function menu() {
 	rm -rf /APP >/dev/null 2>&1
 	mkdir /APP >/dev/null 2>&1
 	cd /APP >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/saoml.apk >/dev/null 2>&1
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/apktool.jar >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/saoml.apk >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/apktool.jar >/dev/null 2>&1
 	java -jar apktool.jar d saoml.apk
 	rm -rf saoml.apk >/dev/null 2>&1
 	sed -i 's/IP:PORT/'${fasapkipname}:${faspost}'/g' `grep IP:PORT -rl /APP/saoml/smali/net/openvpn/openvpn/`
@@ -1334,7 +1334,7 @@ function menu() {
 	sed -i 's/云流量/'${fasapknames}'/g' "/APP/saoml/res/values/strings.xml"
 	sed -i 's/net.sbwml.openvpn/'${fasapkname}'/g' "/APP/saoml/AndroidManifest.xml"
 	java -jar apktool.jar b saoml
-	wget -q https://gitee.com/lcy0828/ML/raw/master/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
+	wget -q https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/signer.zip >/dev/null 2>&1 && unzip -o signer.zip >/dev/null 2>&1
 	mv /APP/saoml/dist/saoml.apk /APP/saoml.apk >/dev/null 2>&1
 	java -jar signapk.jar testkey.x509.pem testkey.pk8 /APP/saoml.apk /APP/saoml_sign.apk
 	cp -rf /APP/saoml_sign.apk /var/www/html/saomldaili.apk >/dev/null 2>&1
@@ -1470,7 +1470,7 @@ echo "检查安装环境（建议使用Centos7.0x64---7.4x64搭建）"
 safe
 yum -y install curl wget openssl >/dev/null 2>&1
 banben="v4.6";
-host=https://gitee.com/lcy0828/ML/raw/master/saoml/
+host=https://raw.githubusercontent.com/raindrop-hb/xyrlk/refs/heads/main/saoml/
 ipget
 }
 main
