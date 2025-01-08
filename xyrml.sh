@@ -193,7 +193,7 @@ return 1
 function readytoinstall() {
 echo
 echo "开始安装依赖"
-yum install -y wget ntp ntpdate epel-release telnet openssl openssl-libs openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig tar zip unzip httpd php mariadb mariadb-server php-mysql php-gd php-mbstring iptables-services psmisc dnsmasq
+yum install -y wget ntp ntpdate epel-release telnet openssl openssl-libs openssl-devel lzo lzo-devel pam pam-devel automake pkgconfig tar zip unzip httpd php mariadb mariadb-server php-mysql php-gd php-mbstring iptables-services psmisc dnsmasq --skip-broken
 yum install -y php-mcrypt libmcrypt libmcrypt-devel
 echo "注册服务"
 setenforce 0
